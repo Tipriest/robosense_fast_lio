@@ -982,7 +982,7 @@ int main(int argc, char** argv)
             if (feats_undistort->empty() || (feats_undistort == NULL))
             {
                 std::cout<< "feats_undistort->empty() " << feats_undistort->empty() << std::endl;
-                ROS_WARN("No point, skip this scan!\n");
+                ROS_WARN("case1: No point, skip this scan!\n");
                 continue;
             }
 
@@ -1021,7 +1021,7 @@ int main(int argc, char** argv)
             if (feats_down_size < 5)
             {
                 std::cout<< "feats_down_size " << feats_down_size << std::endl;
-                ROS_WARN("No point, skip this scan!\n");
+                ROS_WARN("case2: No point, skip this scan!\n");
                 continue;
             }
             
