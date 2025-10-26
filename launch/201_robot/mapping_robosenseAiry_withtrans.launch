@@ -1,8 +1,9 @@
 <launch>
     <!-- Launch file for ouster OS2-64 LiDAR -->
+    <!-- 有齐次变换矩阵的情况 -->
 
     <arg name="rviz" default="true" />
-    <rosparam command="load" file="$(find fast_lio)/config/robosenseAiry.yaml" />
+    <rosparam command="load" file="$(find fast_lio)/config/201_robot/robosenseAiry_withtrans.yaml" />
 
     <param name="feature_extract_enable" type="bool" value="0"/>
     <param name="point_filter_num" type="int" value="3"/>
