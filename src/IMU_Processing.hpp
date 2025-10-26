@@ -209,8 +209,8 @@ void ImuProcess::PublishOdometry(const state_ikfom &imu_state,
                                  double timestamp) {
   nav_msgs::Odometry odom_msg;
   odom_msg.header.stamp = ros::Time().fromSec(timestamp);
-  odom_msg.header.frame_id = "camera_init";
-  odom_msg.child_frame_id = "body";
+  odom_msg.header.frame_id = "slam_estimator_world";
+  odom_msg.child_frame_id = "base_pointlio";
 
   // 设置位置
   geometry_msgs::Pose pose_msg;
@@ -241,7 +241,8 @@ void ImuProcess::PublishOdometry(const state_ikfom &imu_state,
   q_tf.setZ(q.z());
   transform.setRotation(q_tf);
   br.sendTransform(tf::StampedTransform(transform, odom_msg.header.stamp,
-                                        "camera_init", "body"));
+                                        "slam_estimator_world",
+                                        "base_pointlio"));
 }
 void ImuProcess::UndistortPcl(
     const MeasureGroup &meas,

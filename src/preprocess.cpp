@@ -921,7 +921,7 @@ void Preprocess::pub_func(PointCloudXYZI &pl, const ros::Publisher publisher, co
   pl.height = 1; pl.width = pl.size();
   sensor_msgs::PointCloud2 output;
   pcl::toROSMsg(pl, output);
-  output.header.frame_id = "camera_init";
+  output.header.frame_id = "slam_estimator_world"; 
   output.header.stamp = ct;
   publisher.publish(output);
 }
