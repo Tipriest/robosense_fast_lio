@@ -1,7 +1,7 @@
 <launch>
     <!-- Launch file for ouster OS2-64 LiDAR -->
 
-    <arg name="rviz" default="true" />
+    <arg name="rviz" default="false" />
     <rosparam command="load" file="$(find fast_lio)/config/201_robot/robosenseAiry_notrans.yaml" />
 
     <param name="feature_extract_enable" type="bool" value="0"/>

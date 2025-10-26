@@ -2,7 +2,7 @@
     <!-- Launch file for ouster OS2-64 LiDAR -->
     <!-- 有齐次变换矩阵的情况 -->
 
-    <arg name="rviz" default="true" />
+    <arg name="rviz" default="false" />
     <rosparam command="load" file="$(find fast_lio)/config/201_robot/robosenseAiry_withtrans.yaml" />
 
     <param name="feature_extract_enable" type="bool" value="0"/>
