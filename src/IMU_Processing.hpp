@@ -391,18 +391,18 @@ void ImuProcess::UndistortPcl(
 void ImuProcess::Process(const MeasureGroup &meas,
                          esekfom::esekf<state_ikfom, 12, input_ikfom> &kf_state,
                          PointCloudXYZI::Ptr cur_pcl_un_) {
-  std::cout << "ImuProcess::Process" << std::endl;
+  // std::cout << "ImuProcess::Process" << std::endl;
   double t1, t2, t3;
   t1 = omp_get_wtime();
 
   if (meas.imu.empty()) {
-    std::cout << "meas.imu.empty() is true, return" << std::endl;
+    // std::cout << "meas.imu.empty() is true, return" << std::endl;
     return;
   };
   ROS_ASSERT(meas.lidar != nullptr);
 
   if (imu_need_init_) {
-    std::cout << "imu need init" << std::endl;
+    // std::cout << "imu need init" << std::endl;
     /// The very first lidar frame
     IMU_init(meas, kf_state, init_iter_num);
 
@@ -430,9 +430,9 @@ void ImuProcess::Process(const MeasureGroup &meas,
 
     return;
   }
-  std::cout << "start UndistortPcl" << std::endl;
+  // std::cout << "start UndistortPcl" << std::endl;
   UndistortPcl(meas, kf_state, *cur_pcl_un_);
-  std::cout << "finish UndistortPcl" << std::endl;
+  // std::cout << "finish UndistortPcl" << std::endl;
   t2 = omp_get_wtime();
   t3 = omp_get_wtime();
 

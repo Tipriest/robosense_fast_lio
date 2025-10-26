@@ -418,8 +418,8 @@ bool sync_packages(MeasureGroup &meas) {
   if (lidar_buffer.empty() || imu_buffer.empty()) {
     return false;
   } else {
-    cout << "lidar_buffer.size()=" << lidar_buffer.size()
-         << "imu_buffer.size()=" << imu_buffer.size() << endl;
+    // cout << "lidar_buffer.size()=" << lidar_buffer.size()
+    //      << "imu_buffer.size()=" << imu_buffer.size() << endl;
   }
 
   /*** push a lidar scan ***/
@@ -449,9 +449,9 @@ bool sync_packages(MeasureGroup &meas) {
     }
 
     meas.lidar_end_time = lidar_end_time;
-    std::cout << "lidar_mean_scantime: " << lidar_mean_scantime
-              << "beg_time: " << meas.lidar_beg_time
-              << " end time: " << meas.lidar_end_time << std::endl;
+    // std::cout << "lidar_mean_scantime: " << lidar_mean_scantime
+    //           << "beg_time: " << meas.lidar_beg_time
+    //           << " end time: " << meas.lidar_end_time << std::endl;
     lidar_pushed = true;
   }
   /*    if(!lidar_pushed)
@@ -1133,15 +1133,15 @@ int main(int argc, char **argv) {
         s_plot9[time_log_counter] = aver_time_consu;
         s_plot10[time_log_counter] = add_point_size;
         time_log_counter++;
-        std::cout << "frame_num: " << frame_num << " " << std::endl;
-        printf(
-            "[ mapping ]: time: this frame: %0.3f ave total: %0.3f IMU + Map + "
-            "Input Downsample: %0.3f ave match: %0.3f ave solve: %0.3f  ave "
-            "ICP: %0.3f  map incre: %0.3f  icp: %0.3f construct H: %0.3f ms\n",
-            1000 * (t5 - t0), 1000 * aver_time_consu, 1000 * (t1 - t0),
-            1000 * aver_time_match, 1000 * aver_time_solve, 1000 * (t3 - t1),
-            1000 * (t5 - t3), 1000 * aver_time_icp,
-            1000 * aver_time_const_H_time);
+        // std::cout << "frame_num: " << frame_num << " " << std::endl;
+        // printf(
+        //     "[ mapping ]: time: this frame: %0.3f ave total: %0.3f IMU + Map + "
+        //     "Input Downsample: %0.3f ave match: %0.3f ave solve: %0.3f  ave "
+        //     "ICP: %0.3f  map incre: %0.3f  icp: %0.3f construct H: %0.3f ms\n",
+        //     1000 * (t5 - t0), 1000 * aver_time_consu, 1000 * (t1 - t0),
+        //     1000 * aver_time_match, 1000 * aver_time_solve, 1000 * (t3 - t1),
+        //     1000 * (t5 - t3), 1000 * aver_time_icp,
+        //     1000 * aver_time_const_H_time);
         /*                printf("[ mapping ]: time: ave total: %0.6f IMU + Map
            + Input Downsample: %0.6f ave match: %0.6f ave solve: %0.6f  ave ICP:
            %0.6f  map incre: %0.6f  icp: %0.6f construct H: %0.6f ms\n",
