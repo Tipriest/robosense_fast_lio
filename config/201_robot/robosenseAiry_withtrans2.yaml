@@ -1,5 +1,6 @@
+# 使用merged的点云数据，映射到base_link上，然后给slam一个imu到base_link的外参
 common:
-  lid_topic: "/rslidar_points_back"
+  lid_topic: "/rslidar_points_merged"
   imu_topic: "/fdilink_ahrs/imu" # /mavros/imu/data /ouster/imu /imu/data  /imu /rslidar_imu_data_front
   # 这里使用的都是系统时钟，所以没必要再做时间的软同步
   time_sync_en: false # ONLY turn on when external time synchronization is really not possible
