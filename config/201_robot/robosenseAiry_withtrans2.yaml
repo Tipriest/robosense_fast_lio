@@ -1,5 +1,5 @@
 common:
-  lid_topic: "/rslidar_points_front"
+  lid_topic: "/rslidar_points_back"
   imu_topic: "/fdilink_ahrs/imu" # /mavros/imu/data /ouster/imu /imu/data  /imu /rslidar_imu_data_front
   # 这里使用的都是系统时钟，所以没必要再做时间的软同步
   time_sync_en: false # ONLY turn on when external time synchronization is really not possible
