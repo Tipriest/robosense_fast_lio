@@ -11,7 +11,7 @@ preprocess:
   # LID_TYPE{AVIA = 1, VELO16, OUST64, RSM1, RSM1_BREAK}
   lidar_type: 5 # 1 for Livox serials LiDAR, 2 for Velodyne LiDAR, 3 for ouster LiDAR,
   scan_line: 96
-  timestamp_unit: 1 # 0-second, 1-milisecond, 2-microsecond, 3-nanosecond.
+  timestamp_unit: 0 # 0-second, 1-milisecond, 2-microsecond, 3-nanosecond.
   blind: 0
 
 mapping:
@@ -29,9 +29,9 @@ mapping:
 
 publish:
   path_en: true
-  scan_publish_en: true # false: close all the point cloud output
-  dense_publish_en: true # false: low down the points number in a global-frame point clouds scan.
-  scan_bodyframe_pub_en: true # true: output the point cloud scans in IMU-body-frame
+  scan_publish_en: false # false: close all the point cloud output
+  dense_publish_en: false # false: low down the points number in a global-frame point clouds scan.
+  scan_bodyframe_pub_en: false # true: output the point cloud scans in IMU-body-frame
 
 pcd_save:
   pcd_save_en: false
