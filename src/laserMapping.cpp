@@ -418,8 +418,8 @@ bool sync_packages(MeasureGroup &meas) {
   if (lidar_buffer.empty() || imu_buffer.empty()) {
     return false;
   } else {
-    cout << "lidar_buffer.size()=" << lidar_buffer.size()
-         << "imu_buffer.size()=" << imu_buffer.size() << endl;
+    // cout << "lidar_buffer.size()=" << lidar_buffer.size()
+    //      << "imu_buffer.size()=" << imu_buffer.size() << endl;
   }
 
   /*** push a lidar scan ***/
